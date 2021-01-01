@@ -14,8 +14,8 @@ Array.prototype.Sum = function() {
 Array.prototype.RowToInd = function() {
   return [...this.slice(0, BONUS), ...this.slice(BONUS + 1, this.length - 1)];
 };
-Array.prototype.IndToRow = function(fill=0) {
-  return [...this.slice(0, BONUS),fill, ...this.slice(BONUS),fill];
+Array.prototype.IndToRow = function(fill = 0) {
+  return [...this.slice(0, BONUS), fill, ...this.slice(BONUS), fill];
 };
 Array.prototype.Bonus = function() {
   return this.slice(0, BONUS).Sum() > 62 ? 35 : 0;
@@ -108,11 +108,10 @@ Array.prototype.Preview = function() {
 
 Array.prototype.Roll = function(holdArr = [false], diceMax = 6) {
   const ha = [...holdArr];
-  
+
   return this.map((v, i) =>
     ha[i % ha.length] ? v : Math.floor(Math.random() * diceMax + 1)
   );
-
 };
 
 ReactDOM.render(<App />, document.getElementById("root"));
